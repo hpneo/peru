@@ -133,7 +133,7 @@ h1 a {
 .section {
     position: relative;
     margin: 0 auto;
-    height: 800px;	
+    min-height: 800px;	
 }
 
 .section .content{
@@ -168,4 +168,19 @@ h1 a {
 	height: 325px;
 	list-style: none;
 	overflow: hidden;
+}
+
+.comments .avatar {
+	border:solid 1px #EA8F86;
+	width: 107px;
+	height: 65px;
+	background-color: #767676;
+	float: left;
+}
+
+.comments .comment-content{
+	float: left;
+	width: 500px;
+	background: url(../images/bg-comment.png) left bottom no-repeat;
+	padding-bottom: 10px;
 }

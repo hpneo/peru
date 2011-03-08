@@ -58,30 +58,30 @@
 				
 				<div class="content">
 					{% block main %}
-						<h3>Noticias</h3>
-	  					{% for article in contents.articles limit:3 %}
-	  						<div class="article">
-	  							<div class="photo"><img src="{{ article.photo.url }}" /></div>
-	  							<div class="article_content">
-	  								<h4>{{ article.title }}</h4>
-	  								<div class="text">
-	  									{{ article.summary }}
-	  								</div>
-								</div>
-	  						</div>
-	  					{% endfor %}
-	  					<h3>Eventos</h3>
-	  					{% for event in contents.events limit:3 %}
-	  						<div class="article">
-	  							<div class="photo"><img src="{{ event.photo.url }}" /></div>
-	  							<div class="article_content">
-	  								<h4>{{ event.title }}</h4>
-	  								<div class="text">
-	  									{{ event.summary }}
-	  								</div>
-								</div>
-	  						</div>
-	  					{% endfor %}
+						<h2>Noticias</h2>
+						<ul class="comments">
+		  					{% for article in contents.articles limit:3 %}
+		  						<li class="comment clearfix">
+		  							<img class="avatar" width="107" height="65" src="{{ article.photo.url }}" />
+		  							<div class="comment-content">
+		  								<h3>{{ article.title }}</h3>
+		  								<div>{{ article.summary }}</div>
+		  							</div>
+		  						</li>
+		  					{% endfor %}
+	  					</ul>
+	  					<h2>Eventos</h2>
+						<ul class="comments">
+		  					{% for event in contents.events limit:3 %}
+		  						<li class="comment clearfix">
+		  							<img class="avatar" width="107" height="65" src="{{ event.photo.url }}" />
+		  							<div class="comment-content">
+		  								<h3>{{ event.title }}</h3>
+		  								<div>{{ event.summary }}</div>
+		  							</div>
+		  						</li>
+		  					{% endfor %}
+	  					</ul>
 					{% endblock %}
 				</div>
 			</li>
