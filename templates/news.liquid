@@ -1,0 +1,26 @@
+{% extends 'parent' %}
+
+{% block main %}
+  <div class="text">
+    <h2>{{ page.title }}</h2>
+    {% editable_long_text 'text' %}
+    <p>Una peque&ntilde;a descripci&oacute;n de la secci&oacute;n</p>
+    {% endeditable_long_text %}
+  </div>
+
+  {% paginate contents.articles by 10 %}
+    {% for article in paginate.collection %}
+    <div class="article">
+      <p class="date">{{ article.date | localized_date: '%B, %Y' }}</p>
+      <h4><a href="/news/{{ article._permalink }}">{{ article.title }}</a></h4>
+      <div class="short">
+        {{ article.summary }} <a href="/news/{{ article._permalink }}">&raquo;</a>
+      </div>
+    </div>
+    {% endfor %}
+
+    {{ paginate | default_pagination: 'previous_label:Recent', 'next_label:Older' }}
+
+  {% endpaginate %}
+
+{% endblock %}

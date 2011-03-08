@@ -1,0 +1,10 @@
+{% extends 'parent' %}
+
+{% block main %}
+  <div class="text">
+    <h2>{{ page.title }}</h2>
+    {% editable_long_text 'text' %}
+    <p>Peru.info se desarroll&oacute;...</p>
+    {% endeditable_long_text %}
+  </div>
+{% endblock %}

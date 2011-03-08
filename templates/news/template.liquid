@@ -1,0 +1,10 @@
+{% extends 'parent' %}
+
+{% block main %}
+  <h2>{{ article.title }}</h2>
+  <p>{{ article.date | localized_date: '%B, %Y' }}</p>
+
+  <div class="text">
+    {{ article.body }}
+  </div>
+{% endblock %}

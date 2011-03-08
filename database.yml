@@ -1,0 +1,142 @@
+site:
+  name: "Perú"
+  locale: en
+  meta_keywords: "peru, marca pais"
+  meta_description: "Dicen que hay un Perú para cada quien"
+
+  pages:
+    index:
+      published: true
+    events:
+      title: Agenda
+      published: true
+      listed: false
+    news:
+      published: true
+      listed: false
+    about:
+      title: Acerca de
+      published: true
+      listed: false
+    marca-peru:
+      title: La marca Perú
+      published: true
+    que_es_marca_pais:
+      title: Qué es una Marca País
+      published: true
+    desarrollo:
+      title: Cómo se desarrolló
+      published: true
+    importancia:
+      title: Por qué una Marca País
+      published: true
+    contact:
+      title: Contáctanos
+      published: true
+      listed: false
+    "news/template":
+      title: Template of a news
+      content_type: articles
+    "events/template":
+      title: Template of a event in agenda
+      content_type: events
+    404:
+      title: Page not found
+      published: true
+
+  content_types:
+    "Articles":
+      description: Kind of an internal simple blog
+      slug: articles
+      order_by: date
+      highlighted_field_name: title
+      api_enabled: false
+      fields:
+        - title:
+            hint: Title of the news
+        - summary:
+            kind: text
+            hint: Short text displayed in the home page
+        - body:
+            kind: text
+            hint: Body of the article
+        - photo:
+            kind: file
+            hint: Photo of the article
+        - date:
+            kind: date
+            label: Publication date
+            hint: Date of the article
+      contents:
+        - "Presentación de Marca Perú":
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
+            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis. Cras in nulla odio. Donec mollis neque eget dui dictum euismod vitae et tortor. Vivamus sagittis sapien ut enim varius tempor ultrices diam semper. Vivamus viverra erat vel eros viverra gravida. Aenean eu magna vel velit consequat euismod non id libero. Cras hendrerit tempus turpis, at placerat dui varius at. Fusce in pellentesque mauris. Nunc volutpat venenatis metus, eu blandit nibh pharetra vel."
+            date: 04/01/2010
+        - "Lorem ipsum dolor sit amet":
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
+            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis. Cras in nulla odio. Donec mollis neque eget dui dictum euismod vitae et tortor. Vivamus sagittis sapien ut enim varius tempor ultrices diam semper. Vivamus viverra erat vel eros viverra gravida. Aenean eu magna vel velit consequat euismod non id libero. Cras hendrerit tempus turpis, at placerat dui varius at. Fusce in pellentesque mauris. Nunc volutpat venenatis metus, eu blandit nibh pharetra vel."
+            date: 03/01/2010
+
+    "Events":
+      description: "List of events"
+      slug: events
+      order_by: date
+      highlighted_field_name: title
+      fields:
+        - title:
+            hint: Title of the event
+        - summary:
+            kind: text
+            hint: Short text displayed in the home page
+        - body:
+            kind: text
+            hint: Body of the event
+        - photo:
+            kind: file
+            hint: Image of the event
+        - date:
+            kind: date
+            label: Publication date
+            hint: Date of the event
+      contents:
+        - "Lorem ipsum dolor sit amet":
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
+            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis."
+            date: 04/03/2011
+        - "Ceremonio de Presentación de Marca Perú":
+            summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
+            body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis."
+            date: 03/03/2011
+
+    "Resources":
+      description: "List of resources"
+      slug: resources
+      order_by: manually
+      fields:
+        - name:
+            hint: Name of the resource
+        - description:
+            kind: text
+            hint: Description of the resource
+        - source:
+            kind: file
+        - event:
+            kind: string
+
+    "Messages":
+      description: "Messages posted by new potential clients"
+      slug: messages
+      highlighted_field_name: name
+      api_enabled: true
+      order_by: date
+      fields:
+        - name:
+            hint: Full name or company name
+        - email:
+            hint: Email
+        - message:
+            hint: Customer message
+            kind: text
+
+  assets:
+    whitelist: ['stylesheets/screen.css', '^images/([^/]+)$']

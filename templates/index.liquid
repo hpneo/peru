@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>{{ site.name }}</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+
+    {{ 'screen' | stylesheet_tag }}
+
+    
+  </head>
+  <body>
+  	<div id="container">
+		<div id="header">
+			<div id="logo">
+  				<h1><a href="/">{{ site.name }}</a></h1>
+  			</div>
+	  		<div id="nav">
+	  			<div id="social"></div>
+	  			<div>
+	  				<ul id="menu">
+	  					{% nav site, no_wrapper: true %}
+	  				</ul>
+	  			</div>
+			</div>
+  		</div>
+		<div id="content">
+  			{% block banner %}
+  			<div id="pitch" style="background-image: url({% editable_file 'banner image', hint: 'Top banner image in each page (944px by 288px)' %}/samples/pitch.jpg{% endeditable_file %})">
+         		{% editable_long_text 'pitch' %}
+         		<ul id="pitch_links">
+         			<li><a>Qu&eacute; otros pa&iacute;ses tienen Marca Pa&iacute;s</a></li>
+         			<li><a>Descubre c&oacute;mo se lleva a cabo la creaci&oacute;n de nuestra Marca Pa&iacute;s</a></li>
+         			<li><a>C&oacute;mo es una Marca Pa&iacute;s</a></li>
+         			<li>
+         				<a>Video Reel Per&uacute;</a>
+         				<a><img src="" alt="video thumb" /></a>
+     				</li>
+         		</ul>
+          		{% endeditable_long_text %}
+  			</div>
+  			{% endblock %}
+  			<div class="wrapper">
+	  			{% block main %}
+	  				<div class="col">
+	  					<h3>Noticias</h3>
+	  					{% for article in contents.articles limit:3 %}
+	  						<div class="article">
+	  							<div class="photo"><img src="{{ article.photo.url }}" /></div>
+	  							<div class="article_content">
+	  								<h4>{{ article.title }}</h4>
+	  								<div class="text">
+	  									{{ article.summary }}
+	  								</div>
+								</div>
+	  						</div>
+	  					{% endfor %}
+	  				</div>
+	  				<div class="col">
+	  					<h3>Eventos</h3>
+	  					{% for event in contents.events limit:3 %}
+	  						<div class="article">
+	  							<div class="photo"><img src="{{ event.photo.url }}" /></div>
+	  							<div class="article_content">
+	  								<h4>{{ event.title }}</h4>
+	  								<div class="text">
+	  									{{ event.summary }}
+	  								</div>
+								</div>
+	  						</div>
+	  					{% endfor %}
+	  				</div>
+	  			{% endblock %}
+  			</div>
+  		</div>
+  		<div id="footer">
+  			<p>Copyright 2011 Perú</p>
+  		</div>
+  	</div>
+  </body>
+</html>

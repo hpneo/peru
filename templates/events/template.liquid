@@ -1,0 +1,19 @@
+{% extends 'parent' %}
+
+{% block main %}
+  <h2>{{ event.title }}</h2>
+  <p>{{ event.date | localized_date: '%B, %Y' }}</p>
+
+  <div class="text">
+    {{ event.body }}
+  </div>
+
+  <h3>Resources</h3>
+  <ul>
+    {% for resource in event.resources %}
+      <li>
+        <img src="{{ resource.site_id | resource_image_url: resource.id, resource.attributes.custom_field_3_filename}}" />
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
