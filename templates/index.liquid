@@ -1,5 +1,4 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
 <!--[if lt IE 7 ]> <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-js ie6" lang="es"> <![endif]-->
 <!--[if IE 7 ]>    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" class="no-js ie7" lang="es"> <![endif]-->
@@ -22,7 +21,7 @@
 <body>
 	<div id="bg-header" class="wrapper"></div>
 	<div id="header" class="wrapper"> 
-		<h1 id="logo"><a href="#">Peru</a></h1> 
+		<h1 id="logo"><a href="#home" class="home anchorLink">Peru</a></h1> 
 		<ul id="follow-us"> 
 			<li class="title">Síguenos</li> 
 			<li class="link"><a class="twitter" href="#">Twitter</a></li> 
@@ -30,72 +29,209 @@
 			<li class="link"><a class="youtube" href="#">YouTube</a></li> 
 		</ul> 
 		<ul	id="menu"> 
-			<li><a href="#brand" class="anchorLink">La marca <span>Perú</span></a></li> 
-			<li><a href="#how" class="anchorLink">Cómo se <span>desarrolló</span></a></li> 
-			<li><a href="#what" class="anchorLink">Qué es una <span>marca país</span></a></li> 
-			<li><a href="#why" class="anchorLink">Por qué una <span>marca país</span></a></li> 
+			<li><a href="#brand" class="brand anchorLink">La marca <span>Perú</span></a></li> 
+			<li><a href="#how" class="how anchorLink">Cómo se <span>desarrolló</span></a></li> 
+			<li><a href="#what" class="what anchorLink">Qué es una <span>marca país</span></a></li> 
+			<li><a href="#why" class="why anchorLink">Por qué una <span>marca país</span></a></li> 
 		</ul> 
 	</div>
 	<div id="container" class="wrapper">
 		<ul class="wrapper">
-			<li class="section" id="section-brand">
-				<a id="brand" name="brand" class="link-anchor"></a>
-				<div class="banner">
-					<ul class="banner-links">
-						<li><a href="#">Qué otros paíces tiene Marca País</a></li>
-						<li><a href="#">Descubre cómo se llevo a cabo la creación de nuestra Marca País</a></li>
-						<li><a href="#">Cómo es una Marca País</a></li>
-						<li><a href="#">Video Reel Perú</a></li>
-					</ul>
-					<div class="banner-content">
-						<img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="660" height="325" />
-						<img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="660" height="325" />
-						<img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="660" height="325" />
-						<img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="660" height="325" />
-						<img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="660" height="325" />		
+			<li class="section" id="section-home">
+				<a id="home" name="home" class="link-anchor"></a>
+				<div class="banner-dif">
+					<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/diffuse-home.png" width="1907" height="326" />
+					<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/diffuse-marca-peru.png" width="1907" height="326" />
+				</div>
+				<div class="banner-bg">
+					<div class="banner">
+						<ul class="banner-links">
+							<li><a href="#">¿Qué otros países tiene Marca País?</a></li>
+							<li><a href="#">Descubre cómo se llevo a cabo la creación de nuestra Marca País</a></li>
+							<li><a href="#">¿Cómo es una Marca País?</a></li>
+							<li class="last"><a href="#">Video Reel Perú</a></li>
+							<li class="video">
+								<span class="pley"></span>
+								<img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="122" height="84" />
+							</li>
+						</ul>
+						<div class="banner-content">
+							<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/banner-home.jpg" width="855" height="325" />
+							<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/banner-marca-peru.jpg" width="855" height="325" />
+							<!--<img src="http://cloud.github.com/downloads/malsup/cycle/beach1.jpg" width="660" height="325" />
+							<img src="http://cloud.github.com/downloads/malsup/cycle/beach2.jpg" width="660" height="325" />
+							<img src="http://cloud.github.com/downloads/malsup/cycle/beach3.jpg" width="660" height="325" />
+							<img src="http://cloud.github.com/downloads/malsup/cycle/beach4.jpg" width="660" height="325" />
+							<img src="http://cloud.github.com/downloads/malsup/cycle/beach5.jpg" width="660" height="325" />-->
+						</div>
 					</div>
 				</div>
 				
-				<div class="content">
+				<div class="content clearfix">
 					{% block main %}
-						<h2>Noticias</h2>
-						<ul class="comments">
-		  					{% for article in contents.articles limit:3 %}
-		  						<li class="comment clearfix">
-		  							<img class="avatar" width="107" height="65" src="{{ article.photo.url }}" />
-		  							<div class="comment-content">
-		  								<h3>{{ article.title }}</h3>
-		  								<div>{{ article.summary }}</div>
-		  							</div>
-		  						</li>
-		  					{% endfor %}
-	  					</ul>
-	  					<h2>Eventos</h2>
-						<ul class="comments">
-		  					{% for event in contents.events limit:3 %}
-		  						<li class="comment clearfix">
-		  							<img class="avatar" width="107" height="65" src="{{ event.photo.url }}" />
-		  							<div class="comment-content">
-		  								<h3>{{ event.title }}</h3>
-		  								<div>{{ event.summary }}</div>
-		  							</div>
-		  						</li>
-		  					{% endfor %}
-	  					</ul>
+						<div id="home_news">
+							<h2>Noticias</h2>
+							<ul class="comments">
+			  					{% for article in contents.articles limit:3 %}
+			  						<li class="comment clearfix">
+			  							<div class="avatar">
+			  								<div class="bg"></div>
+			  								<img width="107" height="65" src="{{ article.photo.url }}" />
+			  							</div>
+			  							<div class="comment-content">
+			  								<h3><a href="/news/{{ article._permalink }}">{{ article.title }}</a></h3>
+			  								<div>{{ article.summary }}</div>
+			  							</div>
+			  						</li>
+			  					{% endfor %}
+		  					</ul>
+	  					</div>
+	  					<div id="home_events">
+		  					<h2>Agenda</h2>
+							<ul class="events">
+			  					{% for event in contents.events limit:3 %}
+			  						<li class="event clearfix">
+			  							<div class="event-content">
+			  								<h3>{{ event.start_date | localized_date '%B' }} {{ event.start_date | localized_date '%d' }}-{{ event.end_date | localized_date '%d' }}</h3>
+			  								<div>{{ event.summary }}</div>
+			  							</div>
+			  							<a href="/events/{{ event._permalink }}" class="event_details">Ver detalles</a>
+			  						</li>
+			  					{% endfor %}
+		  					</ul>
+	  					</div>
 					{% endblock %}
+				</div>
+				<div class="footer">
+					<img class="fb-like" src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/fb.png" width="351" height="23" />
+					<div class="copyright">Copyright 2011 Perú. All rights reserved</div>
+				</div>
+			</li>
+			<li class="section" id="section-brand">
+				<a id="brand" name="brand" class="link-anchor"></a>
+				<div class="banner">
+					<div class="banner-content">  <!-- 660 -->
+						<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/banner-marca-peru.jpg" width="855" height="325" />
+					</div>
+				</div>
+				<div class="content">
+					<ul class="clearfix">
+						<li class="left-column">
+							{% editable_long_text 'Contenido Izquierda (Marca Per&uacute;)' %}
+								<h3>THE BEGINNING</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+						<li class="right-column">
+							{% editable_long_text 'Contenido Derecha (Marca Per&uacute;)' %}
+								<h3>THE MOMENT</h3> 
+								<p>Considering the growth that Per&uacute; has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+					</ul>
+				</div>
+				<div class="footer clearfix">
+					<img class="fb-like" src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/fb.png" width="351" height="23" />
+					<div class="copyright">Copyright 2011 Perú. All rights reserved</div>
 				</div>
 			</li>
 			<li class="section" id="section-how">
 				<a id="how" name="how" class="link-anchor"></a>
-				<h2>How</h2>
+				<div class="banner-bg">
+					<div class="banner">
+						<div class="banner-content">  <!-- 660 -->
+							<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/banner-como-desarrollo.jpg" width="855" height="325" />
+						</div>
+					</div>
+				</div>
+				<div class="content clearfix">
+					<ul class="clearfix">
+						<li class="left-column">
+							{% editable_long_text 'Contenido Izquierda (Cómo se desarrolló)' %}
+								<h3>THE BEGINNING</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+						<li class="right-column">
+							{% editable_long_text 'Contenido Derecha (Cómo se desarrolló)' %}
+								<h3>THE MOMENT</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+					</ul>
+				</div>
+				<div class="footer clearfix">
+					<img class="fb-like" src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/fb.png" width="351" height="23" />
+					<div class="copyright">Copyright 2011 Perú. All rights reserved</div>
+				</div>
 			</li>
 			<li class="section" id="section-what">
 				<a id="what" name="what" class="link-anchor"></a>
-				<h2>What</h2>
+				<div class="banner-bg">
+					<div class="banner">
+						<div class="banner-content">  <!-- 660 -->
+							<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/banner-que-es.jpg" width="855" height="325" />
+						</div>
+					</div>
+				</div>
+				<div class="content clearfix">
+					<ul class="clearfix">
+						<li class="left-column">
+							{% editable_long_text 'Contenido Izquierda (Qué es Marca Perú)' %}
+								<h3>THE BEGINNING</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+						<li class="right-column">
+							{% editable_long_text 'Contenido Derecha (Qué es Marca Perú)' %}
+								<h3>THE MOMENT</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+					</ul>
+				</div>
+				<div class="footer clearfix">
+					<img class="fb-like" src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/fb.png" width="351" height="23" />
+					<div class="copyright">Copyright 2011 Perú. All rights reserved</div>
+				</div>
 			</li>
 			<li class="section" id="section-why">
 				<a id="why" name="why" class="link-anchor"></a>
-				<h2>Why</h2>
+				<div class="banner-bg">
+					<div class="banner">
+						<div class="banner-content">  <!-- 660 -->
+							<img src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/banner-porque.jpg" width="855" height="325" />
+						</div>
+					</div>
+				</div>
+				<div class="content clearfix">
+					<ul class="clearfix">
+						<li class="left-column">
+							{% editable_long_text 'Contenido Izquierda (Por qué Marca Perú)' %}
+								<h3>THE BEGINNING</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+						<li class="right-column">
+							{% editable_long_text 'Contenido Derecha (Por qué Marca Perú)' %}
+								<h3>THE MOMENT</h3>
+								<p>Considering the growth that Perú has been experiencing for a time now, it was decided to approach a process to set the pillars that would guide the construction of the country brand, as part of an off-shore promotion strategy, boosting the commercial sectors with greater international exposition, as are Tourism, Exports and Foreign Investment Fracion</p>
+								<p>Then, it’s valid to think of a country as a brand. The challenge is to stand out, drntion, and –fundamentally- to be able to transmit a clear promise. Countries compete amid themselves to receive theention of tourists and investors, to achieve an increase in the demand of their products and services, and to gain the respect of other nations’ governments, amongst other things. A strong and positive country brand represents a key competitive advantage at the moment of reaching a greater awareness in key stakeholders.</p>
+							{% endeditable_long_text %}
+						</li>
+					</ul>
+				</div>
+				<div class="footer clearfix">
+					<img class="fb-like" src="http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/fb.png" width="351" height="23" />
+					<div class="copyright">Copyright 2011 Perú. All rights reserved</div>
+				</div>
 			</li>
 		</ul>
 	</div>

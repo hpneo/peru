@@ -1,10 +1,12 @@
 body {
 	background: #EE2E24;
+	overflow-y:hidden;
+	/*-ms-overflow-y:hidden;*/
 }
 
 a,
 a:visited {
-color:white;
+	color:white;
 }
 
 .wrapper {
@@ -13,8 +15,11 @@ color:white;
 	position: relative;
 }
 
+/*
+	Logo
+*/
 h1#logo {
-	background: url(../images/logo.png);
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/logo.png);
 	width: 164px;
 	height: 98px;
 	position: absolute;
@@ -23,9 +28,15 @@ h1#logo {
 }
 
 h1 a {
+	width: 164px;
+	height: 98px;	
 	text-indent: -999em;
+	display: block;
 }
 
+/*
+	Header
+*/
 #header {
 	position: fixed;
 	height: 99px;
@@ -38,31 +49,38 @@ h1 a {
 #bg-header {
 	position: fixed;
 	height: 255px;
-	top:27px;
+	top:0px;
 	left:0;
-	right: 0;
-	background: url(../images/bg-header.png) right top no-repeat;
+	right: 18px;
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/bg-header.png) right top no-repeat;
 }
 
 #header #follow-us {
 	position: absolute;
 	right: 0;
-	top: 0;
+	top: -10px;
 	list-style: none;
 	margin: 0;
 }
 
 #header #follow-us li {
 	float: left;
-	margin: 0 5px;
+	margin: 0 3px;
+}
+
+#header #follow-us li.title {
+	text-transform: uppercase;
+	font-size: 11px;
+	margin: 5px 10px 0 0;
 }
 
 #header #follow-us li a {
 	display: block;
 	width: 20px;
 	height: 20px;
-	background: url(../images/follow-us.png);
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/follow-us.png);
 	text-indent: -999em;
+	/*font-family: 'Bree';*/
 }
 
 #header #follow-us .twitter {}
@@ -81,34 +99,292 @@ h1 a {
 #header #menu {
 	position: absolute;
 	right: 0;
-	bottom:0;
+	bottom:28px;
 	margin: 0;
 	list-style-type: none;
 }
 
 #menu li {
-	margin: 0 10px;
+	margin: 0 24px;
 }
 
 #menu li a {
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 13px;
 	float:left;
+	/*font-family: 'Bree';*/
+	text-decoration: none;
+	font-weight: lighter;
+	color: #fffcf4;
+}
+
+#menu li a:hover {
+
+	color: #f8fcb8;
 }
 
 #menu li span {
 	display:block;
-	font-size: 14px;
+	font-size: 19px;
+	font-weight: lighter;
+}
+
+/*
+	//header
+*/
+
+/*
+	generales
+*/
+#container{
+	width: 100%;
 }
 
 #container ul{
 	list-style: none;
 }
 
-#container{
-	width: 100%;
+.section .link-anchor {
+	display: block;
+	height: 159px;
 }
 
+.section {
+    position: relative;
+    margin: 0 auto;
+}
+
+.section .content{
+	background: white;
+	padding: 25px;
+	color: black;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.banner-bg {
+	width: 855px;
+	height: 325px;
+	margin-left: -20px;
+	position: relative;
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/bg-banner.png);
+	padding: 0 20px 34px 20px;
+}
+
+.banner-dif {
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banners/diffuse_home.png);
+  	height: 325px;
+    margin-left: -513px;
+    position: absolute;
+    width: 1907px;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.banner {
+	width: 855px;
+	height: 325px;
+	position: relative;
+	border: solid 1px #EA8F86;
+	margin-bottom: 25px;
+}
+
+/*
+	//generales
+*/
+
+
+/*
+	home
+*/
+
+#section-home .banner .banner-links{
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top:0;
+	height: 287px;
+	width: 148px;
+	padding: 38px 20px 0 79px;
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/banner-links2.png) left top;
+	z-index: 40;
+	list-style-image: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/bullet.png);
+}
+
+#section-home .content {
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/bg-content.png) repeat;
+}
+
+#section-home .banner .banner-links li{
+	margin-bottom: 15px;
+	position: relative;
+}
+
+#section-home .banner .banner-links a{
+	text-decoration: none;
+	font-size: 13px;
+	/*font-family:'Bree';*/
+}
+
+#section-home .banner .banner-links a:hover{
+	text-decoration: underline;
+}
+
+#section-home .banner .banner-links li.last{
+	margin-bottom: 10px; 
+}
+
+#section-home .banner .banner-links li.video{
+	list-style: none;
+	width: 122px;
+	height:84px;
+	border: solid 1px #fff;
+}
+
+#section-home .banner .banner-links li.video span{
+	width: 46px;
+	height: 47px;
+	display: block;
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/play-button.png) no-repeat;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-top: -23px;
+	margin-left: -23px; 
+}
+
+#section-home .banner .banner-content{
+	margin: 0;
+	/*width: 660px;*/
+	height: 325px;
+	list-style: none;
+	overflow: hidden;
+}
+
+#home_news {
+	width: 450px;
+	float: left;
+}
+
+
+
+.comments {
+	margin: 0;
+	list-style: none;
+}
+
+#section-home .content h2 {
+	margin-bottom: 10px;
+	/*font-family: 'Bree';*/
+	font-size: 20px;
+	font-weight: lighter;
+	color:white;
+}
+
+.comments h3 {
+	margin-bottom: 8px;
+	font-size: 13px;
+}
+
+.comments .avatar {
+	border:solid 1px #EA8F86;
+	width: 107px;
+	height: 65px;
+	float: left;
+	margin-right: 15px;
+	position: relative;
+}
+
+.comments .avatar .bg{
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/bg-avatar.png) center center;
+	position: absolute;
+	width: 107px;
+	height: 65px;
+	
+}
+
+.comments .comment-content{
+	float: left;
+	width: 300px;
+	background: url(http://alpha-theia.heroku.com.s3.amazonaws.com/sites/4d7003605b30553c28000005/theme/images/bg-comment.png) left bottom no-repeat;
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	color:white;
+}
+
+
+#home_events {
+	float: left;
+	width: 350px;
+}
+
+#home_events ul.events li.event.clearfix div.event-content h3 {
+	/*font-family:'Bree';*/
+	font-size: 17px;
+	font-weight: lighter;
+	color: #ee2e24;
+	margin-bottom: 5px;
+}
+
+#home_events ul.events li.event.clearfix a.event_details {
+	text-align: left;
+	float: right;
+	margin-right: 20px;
+	padding: 5px 6px;
+	background-color: #d1b8bc;
+	color: #916d6f;
+	text-decoration: none;
+	font: bold 10px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+#home_events ul.events li.event.clearfix div.event-content div {
+	color: #090909;
+	font: 12px "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+
+#home_events ul.events {
+	margin: 0;
+	overflow: auto;
+}
+
+#home_events ul.events li.event.clearfix .event-content {
+	width: 130px;
+	margin-right: 20px;
+	padding: 10px;
+	background-color: white;
+}
+#home_events ul.events li.event.clearfix {
+	float: left;
+	margin-bottom: 20px;
+}
+	
+#home_events ul.events li.event.clearfix.last {
+	margin-right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .no-js #section-what {
 	background: blue;
 }
@@ -124,79 +400,58 @@ h1 a {
 .no-js #section-how {
 	background: aqua;
 }
+*/
 
-.section .link-anchor {
+
+
+/*
+	//brand
+*/
+
+#section-brand .content {
+}
+
+#section-brand .content ul {
+	overflow: auto;
+	margin: 0px;
 	display: block;
-	height: 159px;
 }
 
-.section {
-    position: relative;
-    margin: 0 auto;
-    min-height: 800px;	
+#section-brand .content li.left-column {
+	float: left;
+	width: 48%;	
+	overflow: auto;
+	display: block;
 }
 
-.section .content{
-	background: url(../images/bg-content.png) repeat;
-	height: 300px;
-	padding: 25px;
+#section-brand .content li.right-column{
+	float: right;
+	width: 48%;
 }
 
-.banner {
-	width: 855px;
-	height: 325px;
-	position: relative;
-	border: solid 1px #EA8F86;
-	margin-bottom: 25px;
-}
-
-#section-brand .banner .banner-links{
-	margin: 0;
-	position: absolute;
-	right: 0;
-	top:0;
-	height: 100%;
-	width: 190px;
-	background: url(../images/banner-links.png) left top;
-	z-index: 40;
-	padding-left: 57px;
-}
-
-
-#section-brand .banner .banner-content{
-	margin: 0;
-	width: 660px;
-	height: 325px;
-	list-style: none;
-	overflow: hidden;
-}
-
-.comments {
-	margin: 0;
-	list-style: none;
-}
-
-#section-brand .content h2 {
+#section-brand .content li h3 {
+	font-size: 20px;
+	text-transform: capitalize;
+	color: #ee2e24;
 	margin-bottom: 10px;
 }
 
-.comments h3 {
-	margin-bottom: 8px;
+#section-brand li p {
+	line-height: 1.6em;	
+	margin-bottom: 10px;
+	color: #646464;
+	font-size: 12px;
 }
 
-.comments .avatar {
-	border:solid 1px #EA8F86;
-	width: 107px;
-	height: 65px;
-	background-color: #767676;
+.footer img {
 	float: left;
-	margin-right: 15px;
 }
 
-.comments .comment-content{
-	float: left;
-	width: 330px;
-	background: url(../images/bg-comment.png) left bottom no-repeat;
-	padding-bottom: 15px;
-	margin-bottom: 30px;
+.footer {
+	margin-top: 40px;
+}
+
+.footer .copyright {
+	float: right;
+	color:#FF6A6A;
 }

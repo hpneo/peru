@@ -20,3 +20,15 @@ a:hover { color: #036; }
    Also: hot pink! */
 ::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
 ::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+
+@font-face {
+    font-family: 'Bree';
+    src: url('../fonts/breeregular-webfont.eot');
+    src: url('../fonts/breeregular-webfont.eot?iefix') format('eot'),
+         url('../fonts/breeregular-webfont.woff') format('woff'),
+         url('../fonts/breeregular-webfont.ttf') format('truetype'),
+         url('../fonts/breeregular-webfont.svg#webfontnUFwf05M') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

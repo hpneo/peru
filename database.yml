@@ -35,38 +35,42 @@ site:
       published: true
       listed: false
     "news/template":
-      title: Template of a news
+      title: Plantilla de una noticia
       content_type: articles
     "events/template":
-      title: Template of a event in agenda
+      title: Plantilla de un evento
       content_type: events
     404:
       title: Page not found
       published: true
 
   content_types:
-    "Articles":
-      description: Kind of an internal simple blog
+    "Noticias":
+      description: "Lista de noticias del sitio"
       slug: articles
       order_by: date
       highlighted_field_name: title
       api_enabled: false
       fields:
         - title:
-            hint: Title of the news
+            label: Título
+            hint: Título de la noticia
         - summary:
             kind: text
-            hint: Short text displayed in the home page
+            label: Resumen
+            hint: Texto corto mostrado en la página principal
         - body:
             kind: text
-            hint: Body of the article
+            label: Contenido
+            hint: Contenido de la noticia
         - photo:
             kind: file
-            hint: Photo of the article
+            label: Foto
+            hint: Imagen o foto de la noticia
         - date:
             kind: date
-            label: Publication date
-            hint: Date of the article
+            label: Fecha
+            hint: Fecha de publicación
       contents:
         - "Presentación de Marca Perú":
             summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
@@ -77,66 +81,84 @@ site:
             body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis. Cras in nulla odio. Donec mollis neque eget dui dictum euismod vitae et tortor. Vivamus sagittis sapien ut enim varius tempor ultrices diam semper. Vivamus viverra erat vel eros viverra gravida. Aenean eu magna vel velit consequat euismod non id libero. Cras hendrerit tempus turpis, at placerat dui varius at. Fusce in pellentesque mauris. Nunc volutpat venenatis metus, eu blandit nibh pharetra vel."
             date: 03/01/2010
 
-    "Events":
-      description: "List of events"
+    "Eventos":
+      description: "Lista de eventos"
       slug: events
       order_by: date
       highlighted_field_name: title
       fields:
         - title:
-            hint: Title of the event
+            label: Título
+            hint: Título del evento
         - summary:
             kind: text
-            hint: Short text displayed in the home page
+            label: Resumen
+            hint: Texto corto mostrado en la página principal
         - body:
             kind: text
-            hint: Body of the event
+            label: Descripción
+            hint: Descripción del evento
         - photo:
             kind: file
-            hint: Image of the event
-        - date:
+            label: Foto
+            hint: Imagen o foto del evento
+        - city:
+            label: Ciudad
+            hint: Ciudad del evento
+        - country:
+            label: País
+            hint: País del evento
+        - start_date:
             kind: date
-            label: Publication date
-            hint: Date of the event
+            label: Fecha de inicio
+        - end_date:
+            kind: date
+            label: Fecha de término
       contents:
         - "Lorem ipsum dolor sit amet":
             summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
             body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis."
-            date: 04/03/2011
+            start_date: 08/03/2011
+            end_date: 10/03/2011
         - "Ceremonio de Presentación de Marca Perú":
             summary: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus."
             body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod nisl nec lorem bibendum quis malesuada velit luctus. In dictum, leo ut lacinia fringilla, velit mauris ornare nisl, vitae fermentum lectus tellus ut turpis."
-            date: 03/03/2011
+            start_date: 08/03/2011
+            end_date: 10/03/2011
 
-    "Resources":
-      description: "List of resources"
+    "Recursos":
+      description: "List de recursos usandos en los eventos"
       slug: resources
       order_by: manually
       fields:
         - name:
-            hint: Name of the resource
+            label: Nombre
         - description:
             kind: text
-            hint: Description of the resource
+            label: Descripción
         - source:
             kind: file
+            label: Archivo
+            hint: Archivo descargable de este recurso
         - event:
             kind: string
+            label: Evento
+            hint: Evento asociado a este recurso
 
-    "Messages":
-      description: "Messages posted by new potential clients"
+    "Mensajes":
+      description: "Mensajes enviados por los visitantes"
       slug: messages
       highlighted_field_name: name
       api_enabled: true
       order_by: date
       fields:
         - name:
-            hint: Full name or company name
+            label: Nombre
         - email:
-            hint: Email
+            label: Correo electrónico
         - message:
-            hint: Customer message
             kind: text
+            label: Mensaje
 
   assets:
     whitelist: ['stylesheets/screen.css', '^images/([^/]+)$']
